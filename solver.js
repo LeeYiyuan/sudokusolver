@@ -1,6 +1,4 @@
 function Solver() {
-    this.count = 0;
-
     this.working_grid = [
         [0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -67,7 +65,6 @@ Solver.prototype.backtrack = function (current_row, current_column) {
         return this.backtrack(current_row, current_column);
     } else {
         for (var x = 1; x < 10; x++) {
-            this.count++;
             this.working_grid[current_row][current_column] = x;
             if (this.validate_row(current_row, current_column) &&  this.validate_column(current_row, current_column) && this.validate_box(current_row, current_column)){
                 if (this.backtrack(current_row, current_column)) {
