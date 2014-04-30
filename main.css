@@ -1,0 +1,52 @@
+body{
+    background-color: #faf8ef;
+}
+
+.container{
+    width: 480px;
+    margin:0px auto;
+    overflow: hidden;
+}
+
+.main-grid{
+    background-color: #bbada0;
+    border-radius: 2px;
+    padding: 3px;
+}
+
+.big-grid{
+}
+
+.small-grid{
+    width:45px;
+    height:45px;
+    border:1px gray;
+    border-radius:3px;
+    text-align: center;
+    font-size: 17px;
+    overflow: hidden;
+}
+
+.button {
+    background-color:#bbada0;
+    border-radius:3px;
+    text-indent:0;
+    border:1px solid #dcdcdc;
+    display:inline-block;
+    color:#ffffff;
+    font-family:Comic Sans MS;
+    font-size:15px;
+    font-weight:bold;
+    font-style:normal;
+    height:50px;
+    line-height:50px;
+    width:100px;
+    text-decoration:none;
+    text-align:center;
+}
+.button:hover {
+    background-color:#776d50;
+}.button:active {
+     position:relative;
+     top:1px;
+ }
