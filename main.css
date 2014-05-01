@@ -3,12 +3,35 @@ body{
 }
 
 .container{
-    width: 480px;
+    width: 436px;
     margin:0px auto;
     overflow: hidden;
 }
 
+.heading_container{
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.buttons_container{
+    width: 100%;
+    margin-top: 5px;
+}
+
+.heading_title{
+    width: 100%;
+    margin:0 auto;
+    text-align: center;
+}
+
+.heading_info{
+    width: 100%;
+    margin:0 auto;
+    text-align: center;
+}
+
 .main-grid{
+    width: 100%;
     background-color: #bbada0;
     border-radius: 2px;
     padding: 3px;
@@ -18,8 +41,8 @@ body{
 }
 
 .small-grid{
-    width:45px;
-    height:45px;
+    width:43px;
+    height:43px;
     border:1px gray;
     border-radius:3px;
     text-align: center;
@@ -43,9 +66,23 @@ body{
     width:100px;
     text-align:center;
 }
+
 .button:hover {
     background-color:#776d50;
-}.button:active {
+}
+
+.button:active {
      position:relative;
      top:1px;
- }
+}
+
+.start_button{
+    float:left;
+    width:215.5px;
+}
+
+.clear_button{
+    float:right;
+    width:215.5px;
+}
+

@@ -6,17 +6,14 @@
 
 <body>
 
-<header>
-    <div align="center" style="margin: 0px">
-        <span style="font-family:verdana; font-size: 50px; font-weight: bold">Sudoku Solver</span>
-        <span style="font-family:comic-sans; font-size: 12px; margin-bottom: 0px;">By Lee Yiyuan</span>
-        <p style="margin-top:0px; margin-bottom: 10px;" ><a href="http://codemyroad.wordpress.com/2014/05/01/solving-sudoku-by-backtracking/">codemyroad.wordpress.com</a></p>
-    </div>
-</header>
-
 <div class="container">
 
-    <table class="main-grid" cellspacing="2px" align="center">
+    <div class="heading_container">
+        <div class="heading_title"><span style="font-family:verdana; font-size: 50px; font-weight: bold">Sudoku Solver</span></div>
+        <div class="heading_info"><span style="font-family:comic-sans; font-size: 12px;">By Lee Yiyuan. <a href="http://codemyroad.wordpress.com/2014/05/01/solving-sudoku-by-backtracking/">codemyroad.wordpress.com</a></span></div>
+    </div>
+
+    <table class="main-grid" cellspacing="2px">
         <tr>
             <td>
                 <table class="big-grid" cellspacing="1px">
@@ -357,11 +354,12 @@
             </td>
         </tr>
     </table>
-    <div style="width: 100%; overflow: hidden; float:left;">
-        <button class="button" style="margin-top: 10px; float:left; width:50%;" onclick="solve()">
+
+    <div class="buttons_container">
+        <button class="button start_button" onclick="solve()">
            Solve
         </button>
-        <button class="button" style="margin-top: 10px; float:right; width:50%;" onclick="clearGrid()">
+        <button class="button clear_button" onclick="clearGrid()">
             Clear
         </button>
     </div>
