@@ -6,6 +6,7 @@ body{
     width: 436px;
     margin:0px auto;
     overflow: hidden;
+    box-sizing:border-box;
 }
 
 .heading_container{
@@ -35,6 +36,8 @@ body{
     background-color: #bbada0;
     border-radius: 2px;
     padding: 3px;
+    box-sizing:border-box;
+    clear:both;
 }
 
 .big-grid{
@@ -79,10 +82,12 @@ body{
 .start_button{
     float:left;
     width:215.5px;
+    clear:left;
 }
 
 .clear_button{
     float:right;
     width:215.5px;
+    clear:right;
 }
 
