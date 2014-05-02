@@ -6,36 +6,40 @@ body{
     width: 436px;
     margin:0px auto;
     overflow: hidden;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing:border-box;
 }
 
 .heading_container{
-    width: 100%;
+    width: 436px;
     margin-bottom: 5px;
 }
 
 .buttons_container{
-    width: 100%;
+    width: 436px;
     margin-top: 5px;
 }
 
 .heading_title{
-    width: 100%;
+    width: 436px;
     margin:0 auto;
     text-align: center;
 }
 
 .heading_info{
-    width: 100%;
+    width: 436px;
     margin:0 auto;
     text-align: center;
 }
 
 .main-grid{
-    width: 100%;
+    width: 436px;
     background-color: #bbada0;
     border-radius: 2px;
     padding: 3px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing:border-box;
     clear:both;
 }
@@ -68,6 +72,9 @@ body{
     line-height:50px;
     width:100px;
     text-align:center;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing:border-box;
 }
 
 .button:hover {
