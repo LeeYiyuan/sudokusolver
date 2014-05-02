@@ -3,58 +3,39 @@ body{
 }
 
 .container{
-    width: 436px;
-    margin:0px auto;
-    overflow: hidden;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing:border-box;
+    width:440px;
+    margin: 0px auto;
 }
 
 .heading_container{
-    width: 436px;
+    text-align: center;
     margin-bottom: 5px;
 }
 
-.buttons_container{
-    width: 436px;
-    margin-top: 5px;
-}
-
-.heading_title{
-    width: 436px;
-    margin:0 auto;
-    text-align: center;
-}
-
-.heading_info{
-    width: 436px;
-    margin:0 auto;
-    text-align: center;
-}
-
-.main-grid{
-    width: 436px;
+.sudoku_grid{
+    width:440px;
+    height:440px;
     background-color: #bbada0;
-    border-radius: 2px;
-    padding: 3px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing:border-box;
-    clear:both;
+    border-radius: 3px;
 }
 
-.big-grid{
+.sub_grid{
+    float:left;
 }
 
-.small-grid{
-    width:43px;
-    height:43px;
-    border:1px gray;
-    border-radius:3px;
+.cell {
+    height: 45px;
+    width: 45px;
+    float: left;
     text-align: center;
     font-size: 17px;
-    overflow: hidden;
+    padding: 0;
+    border:1px gray;
+    border-radius:3px;
+}
+
+.controls_container{
+    margin-top: 5px;
 }
 
 .button {
@@ -86,15 +67,13 @@ body{
      top:1px;
 }
 
-.start_button{
+.solve_button{
     float:left;
-    width:215.5px;
-    clear:left;
+    width:217.5px;
 }
 
 .clear_button{
     float:right;
-    width:215.5px;
-    clear:right;
+    width:217.5px;
 }
 
