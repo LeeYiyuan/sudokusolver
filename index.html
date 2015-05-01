@@ -15,347 +15,7 @@
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>By Lee Yiyuan. <a href="http://codemyroad.wordpress.com/2014/05/01/solving-sudoku-by-backtracking/">codemyroad.wordpress.com</a></span></div>
     </div>
 
-    <table class="sudoku_grid" cellspacing="2" cellpadding="0">
-        <tr>
-            <td>
-                <table class="sub_grid" cellspacing="2" cellpadding="0">
-                    <tr>
-                        <td >
-                            <input type="text" id="c00" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c01" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c02" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td >
-                            <input type="text" id="c10" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c11" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c12" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td >
-                            <input type="text" id="c20" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c21" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c22" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-            <td>
-                <table class="sub_grid" cellspacing="2" cellpadding="0">
-                    <tr>
-                        <td >
-                            <input type="text" id="c03" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c04" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c05" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td >
-                            <input type="text" id="c13" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c14" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c15" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td >
-                            <input type="text" id="c23" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c24" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c25" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-            <td>
-                <table class="sub_grid" cellspacing="2" cellpadding="0">
-                    <tr>
-                        <td >
-                            <input type="text" id="c06" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c07" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c08" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td >
-                            <input type="text" id="c16" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c17" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c18" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td >
-                            <input type="text" id="c26" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c27" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c28" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <table class="sub_grid" cellspacing="2" cellpadding="0">
-                    <tr>
-                        <td >
-                            <input type="text" id="c30" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c31" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c32" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td >
-                            <input type="text" id="c40" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c41" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c42" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td >
-                            <input type="text" id="c50" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c51" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c52" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-            <td>
-                <table class="sub_grid" cellspacing="2" cellpadding="0">
-                    <tr>
-                        <td >
-                            <input type="text" id="c33" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c34" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c35" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td >
-                            <input type="text" id="c43" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c44" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c45" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td >
-                            <input type="text" id="c53" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c54" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c55" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-            <td>
-                <table class="sub_grid" cellspacing="2" cellpadding="0">
-                    <tr>
-                        <td >
-                            <input type="text" id="c36" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c37" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c38" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td >
-                            <input type="text" id="c46" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c47" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c48" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td >
-                            <input type="text" id="c56" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c57" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c58" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <table class="sub_grid" cellspacing="2" cellpadding="0">
-                    <tr>
-                        <td >
-                            <input type="text" id="c60" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c61" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c62" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td >
-                            <input type="text" id="c70" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c71" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c72" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td >
-                            <input type="text" id="c80" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c81" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c82" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-            <td>
-                <table class="sub_grid" cellspacing="2" cellpadding="0">
-                    <tr>
-                        <td >
-                            <input type="text" id="c63" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c64" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c65" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td >
-                            <input type="text" id="c73" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c74" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c75" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td >
-                            <input type="text" id="c83" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c84" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c85" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-            <td>
-                <table class="sub_grid" cellspacing="2" cellpadding="0">
-                    <tr>
-                        <td >
-                            <input type="text" id="c66" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c67" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c68" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td >
-                            <input type="text" id="c76" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c77" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c78" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td >
-                            <input type="text" id="c86" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c87" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                        <td >
-                            <input type="text" id="c88" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
+    <table class="sudoku_grid" cellspacing="2" cellpadding="0"></table>
 
     <div class="controls_container">
         <div class="button solve_button" onclick="solve()">
@@ -368,9 +28,38 @@
     </div>
 </div>
 
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        for(var r = 0; r < 3; r++){
+            var row = $('<tr/>');
+            for(var c = 0; c < 3; c++){
+                var col = $('<td/>');
+                var table = $('<table class="sub_grid" cellspacing="2" cellpadding="0"/>');
+
+                for(var _r = 0; _r < 3; _r++){
+                    var _row = $('<tr/>');
+                    for(var _c = 0; _c < 3; _c++){
+                        var _col = $('<td/>');
+                        _col.append('<input type="text" id="c' + (r * 3 + _r).toString() + (c * 3 + _c).toString() + '"" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>');
+                        _row.append(_col);
+                    }
+                    table.append(_row);
+                }
+
+                col.append(table);
+                row.append(col);
+            }
+            $('.sudoku_grid').append(row);
+        }
+    });
+</script>
+
 <script src="solver.js"></script>
 
-<script>
+
+<script type="text/javascript">
     function isNumberKey(evt){
         var charCode = (evt.which) ? evt.which : event.keyCode;
         if (charCode > 31 && (charCode < 49 || charCode > 57))
@@ -384,6 +73,16 @@
             caller.style.backgroundColor = '#afffff';
         }else{
             caller.style.backgroundColor = '#ffffff';
+        }
+    }
+
+    function clearGrid(){
+        for (var row = 0; row < 9; row++) {
+            for (var column = 0; column < 9; column++) {
+                var cell = document.getElementById("c" + row.toString() + column.toString());
+                cell.value = null;
+                cell.style.backgroundColor = '#ffffff';
+            }
         }
     }
 
@@ -404,16 +103,6 @@
             }
         }else{
             alert("No solutions found!");
-        }
-    }
-
-    function clearGrid(){
-        for (var row = 0; row < 9; row++) {
-            for (var column = 0; column < 9; column++) {
-                var cell = document.getElementById("c" + row.toString() + column.toString());
-                cell.value = null;
-                cell.style.backgroundColor = '#ffffff';
-            }
         }
     }
 </script>

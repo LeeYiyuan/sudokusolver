@@ -48,22 +48,21 @@ Solver.prototype.validate_box = function (current_row, current_column) {
 };
 
 Solver.prototype.backtrack = function (current_row, current_column) {
-    current_column++;
-    if (current_column > 8) {
+    current_column++; // Move to next cell in row
+    if (current_column > 8) { // Moves to next row when end of column is reached
         current_column = 0;
         current_row++;
-        if (current_row > 8) {
+        if (current_row > 8) { // Checks if end of grid is reached
             return true;
         }
     }
 
-    if (this.working_grid[current_row][current_column] != 0) {
+    if (this.working_grid[current_row][current_column] != 0) { // Move to next cell if user has entered a number in current cell
         if (!(this.validate_row(current_row, current_column) && this.validate_column(current_row, current_column) && this.validate_box(current_row, current_column))){
-            // Anti-monkey. In case input was invalid.
             return false;
         }
         return this.backtrack(current_row, current_column);
-    } else {
+    } else { // Goes through all possible numbers if user has left cell blank
         for (var x = 1; x < 10; x++) {
             this.working_grid[current_row][current_column] = x;
             if (this.validate_row(current_row, current_column) &&  this.validate_column(current_row, current_column) && this.validate_box(current_row, current_column)){
