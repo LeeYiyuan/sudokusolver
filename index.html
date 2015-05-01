@@ -28,27 +28,30 @@
     </div>
 </div>
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function() {
+        // Main grid
         for(var r = 0; r < 3; r++){
             var row = $('<tr/>');
             for(var c = 0; c < 3; c++){
                 var col = $('<td/>');
-                var table = $('<table class="sub_grid" cellspacing="2" cellpadding="0"/>');
 
+                // Sub grid
+                var _table = $('<table class="sub_grid" cellspacing="2" cellpadding="0"/>');
                 for(var _r = 0; _r < 3; _r++){
                     var _row = $('<tr/>');
                     for(var _c = 0; _c < 3; _c++){
                         var _col = $('<td/>');
-                        _col.append('<input type="text" id="c' + (r * 3 + _r).toString() + (c * 3 + _c).toString() + '"" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>');
+                        var _cell = $('<input type="text" id="c' + (r * 3 + _r).toString() + (c * 3 + _c).toString() + '"" class="cell" maxlength="1" onkeypress="return isNumberKey(event)" onchange="onTextFieldChanged(event)"/>');
+                        _col.append(_cell);
                         _row.append(_col);
                     }
-                    table.append(_row);
+                    _table.append(_row);
                 }
 
-                col.append(table);
+                col.append(_table);
                 row.append(col);
             }
             $('.sudoku_grid').append(row);
@@ -82,6 +85,7 @@
                 var cell = document.getElementById("c" + row.toString() + column.toString());
                 cell.value = null;
                 cell.style.backgroundColor = '#ffffff';
+                cell.readOnly = false;
             }
         }
     }
@@ -90,7 +94,8 @@
         var solver = new Solver();
         for(var row = 0; row < 9; row++){
             for(var column = 0; column < 9; column ++){
-                var value = document.getElementById("c" + row.toString() + column.toString()).value;
+                var cell = document.getElementById("c" + row.toString() + column.toString());
+                var value = cell.value;
                 solver.working_grid[row][column] = value;
             }
         }
@@ -99,6 +104,7 @@
                 for (var column = 0; column < 9; column++) {
                     var cell = document.getElementById("c" + row.toString() + column.toString());
                     cell.value = solver.working_grid[row][column];
+                    cell.readOnly = true;
                 }
             }
         }else{
